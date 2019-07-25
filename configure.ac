@@ -1661,13 +1661,13 @@ if test "$with_zlib" != 'yes'; then
     DISTCHECK_CONFIG_FLAGS="${DISTCHECK_CONFIG_FLAGS} --with-zlib=$with_zlib "
 fi
 
-have_zlib='no'
+have_zlib='yes'
 ZLIB_CFLAGS=""
 ZLIB_LIBS=""
 ZLIB_PKG=""
 if test "x$with_zlib" = "xyes"; then
   AC_MSG_RESULT([-------------------------------------------------------------])
-  PKG_CHECK_MODULES(ZLIB,[zlib >= 1.0.0], have_zlib=yes, have_zlib=no)
+  #PKG_CHECK_MODULES(ZLIB,[zlib >= 1.0.0], have_zlib=yes, have_zlib=no)
   AC_MSG_RESULT([])
 fi
 
@@ -2106,13 +2106,13 @@ if test "$with_freetype" != 'yes'; then
     DISTCHECK_CONFIG_FLAGS="${DISTCHECK_CONFIG_FLAGS} --with-freetype=$with_freetype "
 fi
 
-have_freetype='no'
+have_freetype='yes'
 FREETYPE_CFLAGS=""
 FREETYPE_LIBS=""
 FREETYPE_PKG=""
 if test "x$with_freetype" = "xyes"; then
   AC_MSG_RESULT([-------------------------------------------------------------])
-  PKG_CHECK_MODULES(FREETYPE,[freetype2], have_freetype=yes, have_freetype=no)
+  #PKG_CHECK_MODULES(FREETYPE,[freetype2], have_freetype=yes, have_freetype=no)
   AC_MSG_RESULT([])
 fi
 
@@ -2365,7 +2365,7 @@ if test "$with_jpeg" != 'yes'; then
     DISTCHECK_CONFIG_FLAGS="${DISTCHECK_CONFIG_FLAGS} --with-jpeg=$with_jpeg "
 fi
 
-have_jpeg='no'
+have_jpeg='yes'
 JPEG_LIBS=''
 if test "$with_jpeg" != 'no'; then
     AC_MSG_RESULT([-------------------------------------------------------------])
@@ -2377,7 +2377,7 @@ if test "$with_jpeg" != 'no'; then
     AC_CHECK_HEADER(jerror.h,passed=`expr $passed + 1`,failed=`expr $failed + 1`)
     AC_CHECK_HEADER(jmorecfg.h,passed=`expr $passed + 1`,failed=`expr $failed + 1`)
     AC_CHECK_HEADER(jpeglib.h,passed=`expr $passed + 1`,failed=`expr $failed + 1`)
-    AC_CHECK_LIB(jpeg,jpeg_read_header,passed=`expr $passed + 1`,failed=`expr $failed + 1`,)
+    #AC_CHECK_LIB(jpeg,jpeg_read_header,passed=`expr $passed + 1`,failed=`expr $failed + 1`,)
 
 # Test for compatible JPEG library
 if test "$ac_cv_jpeg_version_ok" != 'yes'; then
@@ -2645,13 +2645,13 @@ if test "$with_png" != 'yes'; then
     DISTCHECK_CONFIG_FLAGS="${DISTCHECK_CONFIG_FLAGS} --with-png=$with_png "
 fi
 
-have_png='no'
+have_png='yes'
 PNG_CFLAGS=""
 PNG_LIBS=""
 PNG_PKG=""
 if test "x$with_png" = "xyes"; then
   AC_MSG_RESULT([-------------------------------------------------------------])
-  PKG_CHECK_MODULES(PNG,[libpng >= 1.0.0], have_png=yes, have_png=no)
+  #PKG_CHECK_MODULES(PNG,[libpng >= 1.0.0], have_png=yes, have_png=no)
   AC_MSG_RESULT([])
 fi
 
